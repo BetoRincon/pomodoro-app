@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import Timer from './Timer/Timer.js'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='timer-container'>
+        <h1>Pomodoro Timer  </h1>
+        <Timer name="1"/>
+      </div>
+
+      {/* <div className='timer-container'>
+        <h1>Pomodoro Timer  </h1>
+        <Timer name="2"/>
+      </div> */}
+
     </div>
   );
 }
