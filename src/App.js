@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Timer from './Timer/Timer.js'
 
@@ -6,14 +5,9 @@ function App() {
   return (
     <div className="App">
       <div className='timer-container'>
-        <h1>Pomodoro Timer  </h1>
-        <Timer name="1"/>
+        <h1>Pomodoro</h1>
+        <Timer/>
       </div>
-
-      {/* <div className='timer-container'>
-        <h1>Pomodoro Timer  </h1>
-        <Timer name="2"/>
-      </div> */}
 
     </div>
   );

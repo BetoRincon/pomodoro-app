@@ -1,5 +1,4 @@
 import React from 'react'
-import { render } from 'react-dom'
 
 class Timer extends React.Component{
 
@@ -26,7 +25,7 @@ class Timer extends React.Component{
 
     initTimer(){
         let formattedTimer = new Date();
-        formattedTimer.setMinutes(0,5,0);
+        formattedTimer.setMinutes(25,0,0);
         this.setState({
             timer: formattedTimer,
         })
@@ -94,7 +93,8 @@ class Timer extends React.Component{
     render(){
         return(
             <div className='timer-box'>
-                <h1>{this.state.timer.toString()}</h1>
+                <h1>{this.props.name}</h1>
+                <h1 className='timer-label'>{this.state.timer.toString()}</h1>
                 <button onClick={this.onClickButton}>{this.state.buttonLabel}</button>
             </div>
         )
