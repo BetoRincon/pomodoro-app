@@ -19,3 +19,20 @@ body {
 .App {
   width: 70vw;
 }
+
+.timer-container-header{
+  padding: 1em;
+}
+
+.timer-container-header-item{
+  display: inline;
+  margin: 1em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.active{
+  background-color:rgb(189,88,83);
+  border-radius: 0.5em;
+  font-weight: bold;
+}
