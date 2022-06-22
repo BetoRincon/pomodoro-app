@@ -1,4 +1,5 @@
 import React from 'react'
+import TimerHeader from '../TimerHeader/TimerHeader.js';
 
 class Timer extends React.Component{
 
@@ -8,24 +9,26 @@ class Timer extends React.Component{
         this.state = {
             timer: new Date(),
             buttonLabel: 'Start',
-            isTimerRunning: false
+            isTimerRunning: false,
+            startTime: 25
         }
         this.formattingTimerOutput();
         this.onClickButton = this.onClickButton.bind(this);
+        this.handleOptionChange = this.handleOptionChange.bind(this);
     }
 
     componentDidMount(){
         console.log('componentDidMount')
-        this.initTimer();
+        this.initTimer(this.state.startTime);
     }
 
     componentWillUnmount(){
         clearInterval(this.intervalId)
     }
 
-    initTimer(){
+    initTimer(startTime){
         let formattedTimer = new Date();
-        formattedTimer.setMinutes(25,0,0);
+        formattedTimer.setMinutes(startTime,0,0);
         this.setState({
             timer: formattedTimer,
         })
@@ -90,12 +93,23 @@ class Timer extends React.Component{
         this.onStartTimer();
     }
 
+    handleOptionChange(time){
+        console.log("time: ", time);
+        this.setState({
+            startTime: time
+        }
+        )
+        console.log("state", this.state)
+        this.initTimer(time);
+    }
+
     render(){
         return(
             <div className='timer-box'>
+                <TimerHeader onChangeOption={this.handleOptionChange}/>
                 <h1>{this.props.name}</h1>
                 <h1 className='timer-label'>{this.state.timer.toString()}</h1>
-                <button onClick={this.onClickButton}>{this.state.buttonLabel}</button>
+                <button id='action-button' onClick={this.onClickButton}>{this.state.buttonLabel}</button>
             </div>
         )
     }
