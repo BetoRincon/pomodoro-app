@@ -1,28 +1,47 @@
 import React from "react";
 
 function TimerContainer(props){
-    const options = ['Pomodoro', 'Short Break', 'Long Break'];
+    const optionsMap = {
+        'Pomodoro': {
+            backgroundColor: '#d9564f',
+            time: 25
+        },
+        'Short Break': {
+            backgroundColor : '#4d9095',
+            time: 5
+        },
+        'Long Break': {
+            backgroundColor : '#447ca2',
+            time: 20
+        }
+    };
     const itemActive = "timer-container-header-item active";
     const itemInactive = "timer-container-header-item";
-    const listItems = options.map((option, index) =>
+    const listItems = Object.keys(optionsMap).map((option, index) =>
             <li key={index}
             className={index === 0 ? itemActive : itemInactive}
             onClick={onClick} >{option}</li>
     )
+
+    function changeButtonStyles(option){
+        const actionButton = document.getElementById('action-button');
+        actionButton.classList = "";
+        actionButton.classList.add(`${option}-active`);
+    }
+
     function onClick(e){
         const target = e.target;
-        const childNodes = e.target.parentNode.childNodes;
+        const childNodes = target.parentNode.childNodes;
+        const option = target.innerHTML;
+        props.onChangeOption(optionsMap[option].time);
+
         childNodes.forEach(element => {
             element.classList.remove('active');
         });
         target.classList.toggle('active');
-        if(e.target.innerHTML === 'Short Break'){
-            return document.body.style.backgroundColor = '#4d9095';
-        }
-        if(e.target.innerHTML === 'Pomodoro'){
-            return document.body.style.backgroundColor = '#d9564f';
-        }
-        document.body.style.backgroundColor = '#447ca2';
+        changeButtonStyles(option.toLowerCase()
+        .replace(" ", "-"));
+        document.body.style.backgroundColor = optionsMap[option].backgroundColor;
     }
 
     return(
