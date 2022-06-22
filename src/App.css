@@ -32,7 +32,19 @@ body {
 }
 
 .active{
-  background-color:rgb(189,88,83);
+  background-color:rgba(255, 255, 255, 0.184);
   border-radius: 0.5em;
   font-weight: bold;
+}
+
+.pomodoro-active{
+  color:#d9564f;
+}
+
+.short-break-active{
+  color: #4d9095;
+}
+
+.long-break-active{
+  color: #447ca2;
 }
