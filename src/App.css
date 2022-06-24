@@ -48,3 +48,41 @@ body {
 .long-break-active{
   color: #447ca2;
 }
+
+
+.centered-div{
+  text-align: left;
+  color: rgb(255, 255, 255);
+  width: 80%;
+  margin: 0 auto;
+}
+
+.task-menu{
+  border-bottom: 2px solid white;
+}
+
+.task-header-container{
+  text-align: center;
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
+.add-task-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4);
+  background-color:rgba(0, 0, 0, 0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin-top: 2em;
+  border-radius: 0.5em;
+  height: 4em;
+}
+
+.add-task-button > img {
+  width: 1.2em;
+  opacity: 0.8;
+  margin: 0.5em;
+}
