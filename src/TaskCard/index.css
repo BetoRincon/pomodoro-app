@@ -1,0 +1,23 @@
+.task-card{
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+    border-radius: 0.5em;
+    color: black;
+    margin-top: 1em;
+  }
+
+.task-card > * {
+  padding: 2rem;
+}
+#task-card-input{
+  flex-grow: 1;
+  text-align: left;
+  border: none;
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+  font-size:30px;
+  font-style: italic;
+  opacity: 0.4;
+  outline: none;
+}
