@@ -93,14 +93,13 @@ class Timer extends React.Component{
         this.onStartTimer();
     }
 
-    handleOptionChange(time){
-        console.log("time: ", time);
+    handleOptionChange(option){
+        this.props.updateTimeLabel(option);
         this.setState({
-            startTime: time
+            startTime: option.time
         }
         )
-        console.log("state", this.state)
-        this.initTimer(time);
+        this.initTimer(option.time);
     }
 
     render(){
@@ -111,6 +110,7 @@ class Timer extends React.Component{
                 <h1 className='timer-label'>{this.state.timer.toString()}</h1>
                 <button id='action-button' onClick={this.onClickButton}>{this.state.buttonLabel}</button>
             </div>
+
         )
     }
 }

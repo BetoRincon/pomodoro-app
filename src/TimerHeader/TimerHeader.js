@@ -1,20 +1,8 @@
 import React from "react";
+import * as Constants from "../constants/constants";
 
 function TimerContainer(props){
-    const optionsMap = {
-        'Pomodoro': {
-            backgroundColor: '#d9564f',
-            time: 25
-        },
-        'Short Break': {
-            backgroundColor : '#4d9095',
-            time: 5
-        },
-        'Long Break': {
-            backgroundColor : '#447ca2',
-            time: 20
-        }
-    };
+    const optionsMap = Constants.optionsMap;
     const itemActive = "timer-container-header-item active";
     const itemInactive = "timer-container-header-item";
     const listItems = Object.keys(optionsMap).map((option, index) =>
@@ -33,7 +21,7 @@ function TimerContainer(props){
         const target = e.target;
         const childNodes = target.parentNode.childNodes;
         const option = target.innerHTML;
-        props.onChangeOption(optionsMap[option].time);
+        props.onChangeOption(optionsMap[option]);
 
         childNodes.forEach(element => {
             element.classList.remove('active');
