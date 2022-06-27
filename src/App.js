@@ -8,16 +8,16 @@ import * as Constants from "./constants/constants";
 function App() {
   const [taskNumber, setTaskNumber] = useState(1);
   const [timeLabel, setTaskLabel] = useState("Time to focus!");
-  const [showTimeCard, toggleTimeCard] = useState(false);
+  const [showTaskCard, toggleTaskCard] = useState(false);
 
   function updateTimeLabel(option){
     setTaskLabel(option.label)
   }
 
   function updateTaskLabel(){
-    if(!showTimeCard) {
+    if(!showTaskCard) {
       setTaskNumber(taskNumber + 1);
-      toggleTimeCard(true);
+      toggleTaskCard(true);
     }
   }
 
@@ -37,7 +37,7 @@ function App() {
         <img src="plus-circle-white.png"></img>
         <p>Add Task</p>
       </div>
-      <TaskCard showCard={showTimeCard}/>
+      <TaskCard showCard={showTaskCard} onToggleTaskCard={toggleTaskCard}/>
     </div>
   );
 }

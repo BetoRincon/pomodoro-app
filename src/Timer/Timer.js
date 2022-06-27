@@ -108,7 +108,7 @@ class Timer extends React.Component{
                 <TimerHeader onChangeOption={this.handleOptionChange}/>
                 <h1>{this.props.name}</h1>
                 <h1 className='timer-label'>{this.state.timer.toString()}</h1>
-                <button id='action-button' onClick={this.onClickButton}>{this.state.buttonLabel}</button>
+                <button id='bt-add-task' onClick={this.onClickButton}>{this.state.buttonLabel}</button>
             </div>
 
         )
