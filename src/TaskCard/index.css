@@ -55,3 +55,48 @@
 .bt-save-task-active {
   background-color:  rgb(34, 34, 34);
 }
+
+#estimated-pomodoros{
+  display: flex;
+  flex-direction: column;
+  padding-top: 0em;
+  gap: 0.5em;
+  font-weight: bold;
+  color: rgb(85, 85, 85);
+}
+
+#input-estimated-pomodoros{
+  border-radius: 0.3em;
+  background-color:rgb(239, 239, 239);
+  border: none;
+  width: 15%;
+  font-size: 16px;
+  margin-right: 0.5em;
+  box-shadow:none;
+  outline: none;
+  line-height: 1.5;
+  padding: 0.5em;
+  font-weight: bold;
+  color: rgb(85, 85, 85);
+}
+
+#estimated-pomodoros > div {
+  display: flex;
+  align-items: center;
+}
+
+#estimated-pomodoros > div > button {
+  cursor: pointer;
+  border-radius: 0.2em;
+  opacity: 0.9;
+  background-color:white;
+  border: 1px solid rgb(223, 223, 223);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+  padding: 8px 12px;
+  margin: 0px 2px;
+}
+
+.img-button {
+  opacity: 0.6;
+  width: 10px;
+}
